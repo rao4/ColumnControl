@@ -1,0 +1,9 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" data-sly-unwrap/>
+<sly data-sly-call="${clientlib.css @ categories='myproject.component'}" data-sly-unwrap/>
+
+<sly data-sly-use.columnInfo="${'columns.js' @ fieldValue=properties.columnType}"></sly>
+<sly data-sly-list="${columnInfo.listJson}" data-sly-unwrap>
+    <div class="column ${item}">
+        <sly data-sly-resource="${'column{0}' @ format=itemList.index, resourceType='wcm/foundation/components/parsys', decorationTagName='span'}"></sly>
+    </div>
+</sly>
